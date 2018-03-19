@@ -1,6 +1,6 @@
 const clientID = '1d80c99810ef49118edb10bd634ebccb';
 const client_secret = '2828767289464a06a98626514346370a';
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'http://jammming_ruanpetersen.surge.sh';
 let accessToken = '';
 
 export let Spotify = {
