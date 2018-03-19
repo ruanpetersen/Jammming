@@ -19,6 +19,7 @@ class App extends Component {
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.search = this.search.bind(this);
+    this.enterSearch = this.enterSearch.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
   }
 
@@ -52,6 +53,15 @@ class App extends Component {
     }
   }
 
+  enterSearch(term) {
+    if (Spotify.accessToken === null || Spotify.accessToken === '' ) {
+      Spotify.getAccessToken();
+    } else {
+      console.log('Search term: ' + term);
+      Spotify.search(term).then(response => {this.setState({searchResults: response})});
+    }
+  }
+
   savePlaylist() {
     let playlistArray = this.state.playlistTracks;
     let playlistName = this.state.playlistName;
@@ -75,7 +85,7 @@ class App extends Component {
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-          <SearchBar onSearch={this.search}/>
+          <SearchBar onEnterSearch={this.enterSearch} onSearch={this.search}/>
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
             <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} addTrack={this.addTrack} removeTrack={this.removeTrack} onNameChange={this.updatePlaylistName} onSave={this.savePlaylist}/>
