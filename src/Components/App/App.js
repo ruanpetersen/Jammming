@@ -57,10 +57,20 @@ class App extends Component {
     let playlistName = this.state.playlistName;
     let trackURIs = playlistArray.map(track => track.uri);
     Spotify.savePlaylist(playlistName, trackURIs);
-    this.setState({playlistTracks: [], playlistName: playlistName});
+    this.setState({playlistTracks: [], playlistName: 'New Playlist'});
+  }
+
+  verify(term) {
+    if (Spotify.accessToken === null || Spotify.accessToken === '' ) {
+      Spotify.getAccessToken();
+    } else {
+      console.log('Already Verified');
+      Spotify.search(term);
+    }
   }
 
   render() {
+    window.onload = this.verify();
     return (
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
