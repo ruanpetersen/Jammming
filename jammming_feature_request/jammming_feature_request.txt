@@ -1,0 +1,6 @@
+Link to the docs on google drive:
+https://drive.google.com/drive/folders/1eT9tTuZAj0_VnVJzuxph6y9Y2c4AWtq3?usp=sharing
+These docs can also be found in the jammming root directory in the folder: [Feature Request - Jammming]
+
+Implemented feature request code and full project:
+https://github.com/ruanpetersen/Jammming
