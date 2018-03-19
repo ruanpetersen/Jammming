@@ -12,10 +12,10 @@ export class Playlist extends React.Component {
     this.props.onNameChange(e.target.value);
   }
 
-  render() {    
+  render() {
     return (
       <div className="Playlist">
-        <input defaultValue={'New Playlist'} />
+        <input onChange={this.handleNameChange} defaultValue={'New Playlist'} />
         <TrackList tracks={this.props.playlistTracks} onRemove={this.props.removeTrack} isRemoval='true'/>
         <a className="Playlist-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</a>
       </div>
