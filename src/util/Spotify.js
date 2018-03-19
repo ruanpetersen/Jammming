@@ -1,6 +1,7 @@
 const clientID = '1d80c99810ef49118edb10bd634ebccb';
 const client_secret = '2828767289464a06a98626514346370a';
 const redirectUri = 'http://localhost:3000';
+const term = 'https://api.spotify.com/v1/search?type=track&q=${term}';
 let accessToken = '';
 
 export let Spotify = {
@@ -17,7 +18,7 @@ export let Spotify = {
       window.history.pushState('Access Token', null, '/'); // clears the parameters, allows to grab a new access token when expires
       return accessToken;
     } else {
-      window.location = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+      window.location = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}/`;
     }
   },
 

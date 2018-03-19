@@ -32,7 +32,7 @@ class App extends Component {
     }
   }
 
-  removeTrack(track){
+  removeTrack(track) {
     const tempPlaylist = this.state.playlistTracks;
     const trackPosition = tempPlaylist.indexOf(track);
     tempPlaylist.splice(trackPosition, 1);

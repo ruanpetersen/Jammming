@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6.94rem;
-  margin-bottom: 6.33rem;
+  padding-top: 8%;
+  margin-bottom: 8%;
 }
 
 .SearchBar input {
-  width: 287px;
+  width: 50%;
   padding: .88rem 0;
   border: 1px solid #fff;
   border-radius: 3px;
