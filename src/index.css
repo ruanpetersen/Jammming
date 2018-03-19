@@ -2,4 +2,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 65, 233, .7) !important;
+}
+::-webkit-scrollbar {
+  width: 1% !important;
+  background: #110f53 !important;
 }

@@ -43,7 +43,6 @@ class App extends Component {
     this.setState({playlistName: name});
   }
 
-
   search(term) {
     if (Spotify.accessToken === null || Spotify.accessToken === '' ) {
       Spotify.getAccessToken();
